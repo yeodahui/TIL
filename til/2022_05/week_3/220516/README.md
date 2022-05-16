@@ -15,11 +15,16 @@
 
 이벤트리스너가 실행되었을 때, 브라우저에서 설정되어있는 기본 이벤트 동작을 취소한다.
 
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba%28255%2C255%2C255%2C0%29&t=zenburn&wt=bw&l=auto&width=680&ds=true&dsyoff=12px&dsblur=14px&wc=true&wa=true&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=152%25&si=false&es=2x&wm=false&code=%253C%21--%2520submit%2520%25EC%259D%2598%2520%25EA%25B8%25B0%25EB%25B3%25B8%2520%25EB%258F%2599%25EC%259E%2591%25EC%259D%2584%2520%25EC%25A4%2591%25EC%25A7%2580%2520--%253E%250A%250Aconst%2520submit%2520%253D%2520document.querySelector%28%27.submit%27%29%253B%250A%250Asubmit.addEventListener%28%27click%27%252C%2520%28event%29%2520%253D%253E%2520%257B%250A%2520%2520%2520%2520console.log%28%27clicked%27%29%253B%250A%2520%2520%2520%2520event.preventDefault%28%29%253B%250A%257D%29"
-  style="width: 552px; height: 345px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
+```javascript
+<!-- submit 의 기본 동작을 중지 -->
+
+const submit = document.querySelector('.submit');
+
+submit.addEventListener('click', (event) => {
+    console.log('clicked');
+    event.preventDefault();
+})
+```
 
 > - submit 버튼을 눌렀을 때 새로고침 취소
 > - 우클릭 방지
@@ -29,8 +34,6 @@
 <br>
 
 ### 마우스 이벤트의 좌표값 <br> `screen`, `client`, `page`, `offset`
-
----
 
 **1. screenX, screenY**
 
@@ -54,4 +57,5 @@
 
 > 이벤트가 걸려있는 **DOM node를 기준**으로 좌표를 표시.
 
-참고: https://hianna.tistory.com/493 [어제 오늘 내일]
+<small>
+참고: https://hianna.tistory.com/493 [어제 오늘 내일] </small>
