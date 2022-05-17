@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title></title>
+  </head>
+  <body>
+    <article class="target">
+      <button type="button">점심</button>
+      <button type="button">저녁</button>
+    </article>
+    <script id="FoodBot">
+      const buttons = document.querySelector(".target");
+
+      function FoodBot(arr = []) {
+        this.menu = arr;
+      }
+
+      FoodBot.prototype.randomPick = function () {
+        const random = Math.floor(Math.random() * arr.length);
+        alert(`${this.menu[random]} 어때요?`);
+      };
+
+      let 점심 = new FoodBot(["냉면", "볶음밥", "간장계란밥", "잔치국수"]);
+      let 저녁 = new FoodBot(["파스타", "샐러드", "불고기", "고추잡채"]);
+
+      console.log(점심.randomPick === 저녁.randomPick); // true
+
+      buttons.addEventListener("click", event => {
+        if (event.target.innerHTML === "점심") {
+          점심.randomPick();
+        } else if (event.target.innerHTML === "저녁") {
+          저녁.randomPick();
+        }
+      });
+    </script>
+    <script id="me">
+      function Me(me = "") {
+        this.name = me;
+        this.balance = 0;
+      }
+      Me.prototype.goWork = function (hour = 1, wage = 9250) {
+        this.balance += +hour * +wage;
+        console.log(`현재 잔고는 ${this.balance}원 입니다.`);
+      };
+
+      const dahui = new Me("여다희");
+      dahui.goWork(1, 9250);
+      dahui.goWork(7, 9250);
+      dahui.goWork(9, 9250);
+
+      function Parent() {
+        this.name = "재현";
+      }
+      Parent.prototype.rename = function (name) {
+        this.name = name;
+      };
+      Parent.prototype.sayName = function () {
+        console.log(this.name);
+      };
+
+      function Child() {
+        Parent.call(this);
+      }
+
+      Child.prototype = Object.create(Parent.prototype);
+      Child.prototype.canWalk = function () {
+        console.log("now i can walk!!");
+      };
+    </script>
+  </body>
+</html>
