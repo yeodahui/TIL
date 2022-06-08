@@ -1,10 +1,21 @@
 # TIL
 
-📝 Today I Learned
+<style type='text/css'>
+  table {
+    border: 0;
+  }
+  td {
+    background-color: #eee;
+  }
+</style>
 
-배운 내용들을 정리해 아카이빙 하는 레포지토리입니다.
+> 📝 Today I Learned
 
-<table>
+배운 내용들을 정리해 아카이브하는 레포지토리입니다.
+
+### 🔗링크 모음
+
+<table style="border: 0;">
 <tr>
   <td><a href="https://github.com/yeodahui/TIL/tree/main/html">HTML</td>
   <td><a href="https://github.com/yeodahui/TIL/tree/main/css">CSS</td>
